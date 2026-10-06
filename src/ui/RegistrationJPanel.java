@@ -21,9 +21,10 @@ import model.User;
  * @author alehenz
  */
 public class RegistrationJPanel extends javax.swing.JPanel {
-    
+
     private ViewJPanel viewPanel;
     private javax.swing.JPanel cardContainer;
+
     /**
      * Creates new form RegistrationJPanel
      */
@@ -32,7 +33,7 @@ public class RegistrationJPanel extends javax.swing.JPanel {
         genderCombo.setSelectedIndex(-1);
         continentCombo.setSelectedIndex(-1);
     }
-    
+
     public void setViewPanel(ViewJPanel viewPanel) {
         this.viewPanel = viewPanel;
     }
@@ -40,6 +41,7 @@ public class RegistrationJPanel extends javax.swing.JPanel {
     public void setCardContainer(javax.swing.JPanel cardContainer) {
         this.cardContainer = cardContainer;
     }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -411,32 +413,32 @@ public class RegistrationJPanel extends javax.swing.JPanel {
             //Validate first name
             if (firstName == null || firstName.trim().isEmpty()) {
                 JOptionPane.showMessageDialog(this, "Please provide your first name", errorTitle, ERROR_MESSAGE);
-                    return;
-                }
+                return;
+            }
             if (!firstName.trim().matches("[\\p{L} '\\-]+")) {
                 JOptionPane.showMessageDialog(this, "First name can only contain letters, spaces, hyphens, and apostrophes", errorTitle, ERROR_MESSAGE);
-                    return;
-                }
+                return;
+            }
 
             //Validate last name
             if (lastName == null || lastName.trim().isEmpty()) {
                 JOptionPane.showMessageDialog(this, "Please provide your last name", errorTitle, ERROR_MESSAGE);
-                    return;
-                }
+                return;
+            }
             if (!lastName.trim().matches("[\\p{L} '\\-]+")) {
                 JOptionPane.showMessageDialog(this, "Last name can only contain letters, spaces, hyphens, and apostrophes", errorTitle, ERROR_MESSAGE);
-                    return;
-                }
-            
+                return;
+            }
+
             //Validate age
-            if (age <18) {
+            if (age < 18) {
                 JOptionPane.showMessageDialog(this, "Please select a valid date of birth. Must be 18 or older", errorTitle, ERROR_MESSAGE);
                 return;
             }
 
             //Validate gender
             if (gender == null || gender.trim().isEmpty()) {
-                JOptionPane.showMessageDialog(this, "Please check an option to indicate your gender", errorTitle, ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(this, "Please select your gender", errorTitle, ERROR_MESSAGE);
                 return;
             }
 
@@ -451,7 +453,7 @@ public class RegistrationJPanel extends javax.swing.JPanel {
                 JOptionPane.showMessageDialog(this, "Please provide your email", errorTitle, ERROR_MESSAGE);
                 return;
             }
-            
+
             if (!email.trim().matches("^[\\w.+-]+@[\\w-]+(\\.[\\w-]+)+$")) {
                 JOptionPane.showMessageDialog(this, "Please enter a valid email address, for example name@example.com", errorTitle, ERROR_MESSAGE);
                 return;
@@ -462,18 +464,18 @@ public class RegistrationJPanel extends javax.swing.JPanel {
                 JOptionPane.showMessageDialog(this, "Please select an option in the continent field", errorTitle, ERROR_MESSAGE);
                 return;
             }
-            
+
             //Validate hobbies
             if (hobbies == null || hobbies.trim().isEmpty()) {
-                JOptionPane.showMessageDialog(this, "Please select an option in the hobbies field", errorTitle, ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(this, "Please enter at least one hobby", errorTitle, ERROR_MESSAGE);
                 return;
             }
-            
+
             //Validate photo
             if (photoPath == null || photoPath.trim().isEmpty()
-                || new ImageIcon(photoPath).getIconWidth() <= 0) {
-            JOptionPane.showMessageDialog(this, "Please upload a valid image file", errorTitle, ERROR_MESSAGE);
-            return;
+                    || new ImageIcon(photoPath).getIconWidth() <= 0) {
+                JOptionPane.showMessageDialog(this, "Please upload a valid image file", errorTitle, ERROR_MESSAGE);
+                return;
             }
 
             User user1 = new User();
@@ -490,16 +492,16 @@ public class RegistrationJPanel extends javax.swing.JPanel {
             user1.setPhotoPath(photoPath);
 
             String successMessage = "First Name: " + firstName.trim()
-            + "\nLast Name: " + lastName.trim()
-            + "\nDate of Birth (yyyy-mm-dd): " + dateOfBirth
-            + "\nAge: " + age
-            + "\nGender: " + gender
-            + "\nPhone: " + phone
-            + "\nEmail: " + email
-            + "\nContinent: " + continent
-            + "\nExperience: " + (experience == null || experience.trim().isEmpty() ? "None" : experience)
-            + "\nHobbies: " + (hobbies == null || hobbies.trim().isEmpty() ? "None" : hobbies)
-            + "\nPhoto Path: " + (photoPath == null || photoPath.trim().isEmpty() ? "Not uploaded" : photoPath);
+                    + "\nLast Name: " + lastName.trim()
+                    + "\nDate of Birth (yyyy-mm-dd): " + dateOfBirth
+                    + "\nAge: " + age
+                    + "\nGender: " + gender
+                    + "\nPhone: " + phone
+                    + "\nEmail: " + email
+                    + "\nContinent: " + continent
+                    + "\nExperience: " + (experience == null || experience.trim().isEmpty() ? "None" : experience)
+                    + "\nHobbies: " + (hobbies == null || hobbies.trim().isEmpty() ? "None" : hobbies)
+                    + "\nPhoto Path: " + (photoPath == null || photoPath.trim().isEmpty() ? "Not uploaded" : photoPath);
 
             //Build the photo icon (if one was uploaded)
             ImageIcon photoIcon = null;
@@ -510,13 +512,13 @@ public class RegistrationJPanel extends javax.swing.JPanel {
             }
 
             JOptionPane.showMessageDialog(
-                this,
-                successMessage,
-                "Success",
-                JOptionPane.INFORMATION_MESSAGE,
-                photoIcon
+                    this,
+                    successMessage,
+                    "Success",
+                    JOptionPane.INFORMATION_MESSAGE,
+                    photoIcon
             );
-            
+
             if (viewPanel != null && cardContainer != null) {
                 viewPanel.displayUser(user1);
                 CardLayout cl = (CardLayout) cardContainer.getLayout();
