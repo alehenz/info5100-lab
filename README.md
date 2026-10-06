@@ -80,23 +80,23 @@ Each failed check shows an error message describing the problem, and the form st
 
 **1. Empty form.** Gender and continent start unselected.
 
-![Empty form](screenshots/lab4/lab4_1.png)
+![Empty form](screenshots/lab4/Lab4_1.png)
 
 **2. Validation error.** An error message appears when a field is invalid.
 
-![Validation error](screenshots/lab4/lab4_2.png)
+![Validation error](screenshots/lab4/Lab4_2.png)
 
 **3. Filled form.** All required fields completed, with a photo uploaded.
 
-![Filled form](screenshots/lab4/lab4_3.png)
+![Filled form](screenshots/lab4/Lab4_3.png)
 
 **4. Success dialog.** Shown after a valid submission.
 
-![Success dialog](screenshots/lab4/lab4_4.png)
+![Success dialog](screenshots/lab4/Lab4_4.png)
 
 **5. View screen.** The submitted details with all inputs disabled, plus the age and photo.
 
-![View screen](screenshots/lab4/lab4_5.png)
+![View screen](screenshots/lab4/Lab4_5.png)
 
 ## Lab 3: User input form
 
