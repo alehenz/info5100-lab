@@ -4,6 +4,8 @@
  */
 package model;
 
+import java.time.LocalDate;
+
 /**
  *
  * @author alehenz
@@ -14,6 +16,7 @@ public class User {
     private String firstName;
     private String lastName;
     private String gender;
+    private LocalDate dateOfBirth;
     private int age;
     private String phone;
     private String email;
@@ -46,6 +49,10 @@ public class User {
         this.age = age;
     }
 
+    public void setDateOfBirth(LocalDate dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
+    }
+    
     public void setPhone(String phone) {
         this.phone = phone;
     }
@@ -81,7 +88,11 @@ public class User {
     public String getGender() {
         return gender;
     }
-
+    
+    public LocalDate getDateOfBirth() {
+        return dateOfBirth;
+    }
+    
     public int getAge() {
         return age;
     }
@@ -114,8 +125,8 @@ public class User {
     @Override
     public String toString() {
         return String.format(
-            "User Profile:\nFirst Name: %s \nLast Name: %s \nGender: %s\nAge: %d\nPhone: %s\nEmail: %s\nContinent: %s\nExperience: %s\nHobbies: %s\nPhoto Path: %s",
-            firstName, lastName, gender, age, phone, email, continent, experience, hobbies, photoPath
+            "User Profile:\nFirst Name: %s \nLast Name: %s \nGender: %s\nDate of birth (yyyy-mm-dd): %s \nAge: %d\nPhone: %s\nEmail: %s\nContinent: %s\nExperience: %s\nHobbies: %s\nPhoto Path: %s",
+            firstName, lastName, gender, dateOfBirth, age, phone, email, continent, experience, hobbies, photoPath
         );
     }   
 }
