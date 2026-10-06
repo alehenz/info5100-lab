@@ -2,7 +2,7 @@
 
 A Java Swing desktop application built incrementally across the labs of INFO 5100 at Northeastern University Toronto. Each lab adds features to the same project, and every lab is tagged in Git so its exact state can be reviewed at any time.
 
-**Author:** Alejandro Henriquez
+**Authors:** Alejandro Henriquez, Shirabthinath Shivaji, Girish Raja Thiyagarajan
 
 ## Labs
 
